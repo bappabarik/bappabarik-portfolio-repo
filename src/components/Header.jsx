@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <header id='about' className="p-4 bg-black text-white">
       <nav className="container mx-auto flex justify-between flex-col">
-      <motion.div className="md:w-36 md:h-36 w-28 h-28 bg-zinc-900 rounded-full mx-auto overflow-hidden border-2 border-fuchsia-400 hover:shadow-[0_0_15px_5px_rgba(232,121,249,0.7)] transition-shadow delay-300"
+      <motion.div className="md:w-36 md:h-36 w-28 h-28 text-center flex justify-center items-center bg-zinc-900 rounded-full mx-auto overflow-hidden border-2 border-fuchsia-400 hover:shadow-[0_0_15px_5px_rgba(232,121,249,0.7)] transition-shadow delay-300"
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{
@@ -23,7 +23,7 @@ const Header = () => {
         }
       }}
       >
-      <img src="public/profile-img.svg" alt="B" className=''/>
+      <img src="public\profile-img.svg" alt="B" className='text-center'/>
       </motion.div>
         <h1 className="text-4xl my-4 font-bold font-mono bg-gradient-to-r from-[#DBA6F4] to-[#A981FE] bg-clip-text text-transparent"> Hi. I'm Bappa Barik. A Web Developer.</h1>
         <svg width="484" height="97" viewBox="0 0 884 297" fill="none" xmlns="http://www.w3.org/2000/svg" className='m-auto p-0 h-22 w-44 md:h-22 md:w-64 '>
