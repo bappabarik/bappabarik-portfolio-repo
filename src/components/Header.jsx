@@ -23,7 +23,7 @@ const Header = () => {
         }
       }}
       >
-      <img src="public\polotno (3).png" alt="" className=''/>
+      <img src="public\profile-img.svg" alt="B" className=''/>
       </motion.div>
         <h1 className="text-4xl my-4 font-bold font-mono bg-gradient-to-r from-[#DBA6F4] to-[#A981FE] bg-clip-text text-transparent"> Hi. I'm Bappa Barik. A Web Developer.</h1>
         <svg width="484" height="97" viewBox="0 0 884 297" fill="none" xmlns="http://www.w3.org/2000/svg" className='m-auto p-0 h-22 w-44 md:h-22 md:w-64 '>
