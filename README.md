@@ -26,7 +26,7 @@ Welcome to my portfolio website! This project showcases my skills, experience, a
 - **API Integration:** Axios, GitHub API
 - **Backend:** Appwrite, Node.js, Nodemailer
 - **Testing:** Postman
-- **Hosting:** [Your Hosting Platform]
+- **Hosting:** [Vercel](https://vercel.com)
 
 ## Getting Started
 
