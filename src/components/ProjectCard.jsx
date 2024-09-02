@@ -26,7 +26,7 @@ const ProjectCard = ({repo, tools}) => {
     return (
         <div className='p-5 bg-black rounded-md flex gap-5 md:flex-row flex-col mt-5'>
             <div className="p-1 md:w-full rounded-xl -rotate-6 ">
-                <img src="public\Assets\codebeetles-blog.png" alt="codebeetles-blog" srcset="" width="500" className=' rounded-xl shadow-lg shadow-purple-400' />
+                <img src="public/codebeetles-blog.png" alt="codebeetles-blog" srcset="" width="500" className=' rounded-xl shadow-lg shadow-purple-400' />
                 <div className=" flex gap-3 justify-between items-center md:flex-row flex-col mt-5">
                     <h2 className='text-white font-bold md:text-lg'>{repo.name}</h2>
                     <div className=" flex gap-2 items-center justify-center">
