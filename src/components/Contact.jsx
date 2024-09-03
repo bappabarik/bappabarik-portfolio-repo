@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import mail from '../Api setup/appwriteFuncConf';
 
 const Contact = () => {
-  const { register, handleSubmit, reset, formState: {isSubmitting} } = useForm();
+  const { register, handleSubmit, reset, formState: {errors, isSubmitting} } = useForm();
 
   const onSubmit = async (data) => {
     try {
@@ -35,21 +35,41 @@ const Contact = () => {
           className="flex flex-col gap-4 items-center"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <input className="border p-3 mb-4 w-full rounded-full bg-black text-white font-mono border-purple-400 focus:outline-purple-700 px-4" type="text" placeholder="Your Name" 
-          {...register("name", { required: true })} />
-          <input className="border p-3 mb-4 w-full rounded-full bg-black text-white font-mono border-purple-400 focus:outline-purple-700 px-4" type="email" placeholder="Your Email" 
-          {...register("email", { required: true })}
-          />
-          <textarea className="border p-2 mb-4 w-full rounded-xl bg-black text-white font-mono border-purple-400 focus:outline-purple-700 px-4 min-h-32 " placeholder="Your Message"
-          {...register("message", { required: true })}
-          ></textarea>
-          <button className={`bg-purple-500 text-white p-2 rounded-full md:w-36 w-full shadow-md shadow-slate-700 font-mono ${isSubmitting && 'bg-purple-600'} hover:bg-purple-600 transition-all delay-75`} type="submit"
-          disabled={isSubmitting}
-          >
-            {
-              isSubmitting ? 'Sending...' : 'Send Message'
-            }
-          </button>
+        <div className="w-full flex flex-col">
+        <input className="border p-3 mb-4 w-full rounded-full bg-black text-white font-mono border-purple-400 focus:outline-purple-700 px-4" type="text" placeholder="Your Name" autoComplete='off'
+        {...register("name", { required: {value: true, message: "Please enter your name."} })} />
+        {
+            errors.name && (<span className='text-red-500 w-full text-left text-sm pl-1'>{errors.name.message}</span>)
+        }
+        </div>
+        <div className="w-full flex flex-col">
+        <input className="border p-3 mb-4 w-full rounded-full bg-black text-white font-mono border-purple-400 focus:outline-purple-700 px-4" type="email" placeholder="Your Email" autoComplete='off'
+        {...register("email", {
+          required: {value: true, message: "Please enter your valid email address."},
+          validate: {
+              matchPattern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || "Email address must be a valid address",
+        }
+        })}
+        />
+        {
+            errors.email && (<span className='text-red-500 w-full text-left text-sm pl-1'>{errors.email.message}</span>)
+        }
+        </div>
+        <div className="w-full flex flex-col">
+        <textarea className="border p-2 mb-4 w-full rounded-xl bg-black text-white font-mono border-purple-400 focus:outline-purple-700 px-4 min-h-32 " placeholder="Your Message"
+        {...register("message", { required: {value: true, message: "Please enter your message."} })}
+        ></textarea>
+        {
+          errors.message && (<span className='text-red-500 w-full text-left text-sm pl-1'>{errors.message.message}</span>)
+        }
+        </div>
+        <button className={`bg-purple-500 text-white p-2 rounded-full md:w-36 w-full shadow-md shadow-slate-700 font-mono ${isSubmitting && 'bg-purple-600'} hover:bg-purple-600 transition-all delay-75`} type="submit"
+        disabled={isSubmitting}
+        >
+          {
+            isSubmitting ? 'Sending...' : 'Send Message'
+          }
+        </button>
         </form>
       </div>
     </section>
