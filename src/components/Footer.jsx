@@ -1,4 +1,9 @@
 import React from 'react';
+import { FaGithub } from "react-icons/fa6";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaDiscord } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -16,9 +21,12 @@ const Footer = () => {
 
       <div className="container mx-auto flex md:flex-row flex-col-reverse justify-between">
         <p className="mt-4 font-mono text-sm">&copy; 2024 Bappa Barik. All rights reserved.</p>
-        <div className="mt-4 font-mono">
-          <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener noreferrer" className="mr-4">GitHub</a>
-          <a href="https://linkedin.com/in/YOUR_LINKEDIN_PROFILE" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <div className="mt-4 font-mono flex gap-5 justify-center items-center">
+          <a href="https://github.com/bappabarik" target="_blank" rel="noopener noreferrer" className=' hover:text-purple-300 transition-all delay-100'><FaGithub size={24} /></a>
+          <a href="https://x.com/bappabarik354" target="_blank" rel="noopener noreferrer" className=' hover:text-purple-300 transition-all delay-100'><FaSquareXTwitter size={24} /></a>
+          <a href="https://linkedin.com/in/bappabarik" target="_blank" rel="noopener noreferrer" className=' hover:text-purple-300 transition-all delay-100'><FaLinkedin size={24} /></a>
+          <a href="https://www.instagram.com/code.beetle" target="_blank" rel="noopener noreferrer" className=' hover:text-purple-300 transition-all delay-100'><FaInstagram size={24} /></a>
+          <a href="https://discord.gg/6rb75yE3" target="_blank" rel="noopener noreferrer" className=' hover:text-purple-300 transition-all delay-100'><FaDiscord size={24} /></a>
         </div>
       </div>
     </footer>

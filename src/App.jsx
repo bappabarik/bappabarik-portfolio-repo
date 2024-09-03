@@ -8,16 +8,15 @@ import Skills from './components/Skills'
 function App() {
 
   return (
-    <div className="">
+    <>
       <Header />
-      <main className=''>
+      <main>
         <Skills />
         <Projects />
-        {/* <About /> */}
         <Contact />
       </main>
       <Footer />
-    </div>
+    </>
   )
 }
 
